@@ -1,0 +1,7 @@
+import java.util.Scanner;
+class BasicPhone implements Phone.Callable{
+	public BasicPhone() {
+		System.out.println("enter the phone number");
+		
+	}
+}

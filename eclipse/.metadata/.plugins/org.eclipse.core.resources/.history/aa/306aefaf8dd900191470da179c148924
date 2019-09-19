@@ -1,0 +1,7 @@
+package packq3;
+
+public class Student {
+	String name;
+	int year;
+	
+}

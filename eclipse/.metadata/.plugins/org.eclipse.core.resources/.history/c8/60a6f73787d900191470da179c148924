@@ -1,0 +1,7 @@
+package packq2;
+
+public class CurrentDate {
+	public int day;
+	public int month;
+	public int year;
+}

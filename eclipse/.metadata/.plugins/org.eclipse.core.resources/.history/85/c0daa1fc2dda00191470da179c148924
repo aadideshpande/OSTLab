@@ -1,0 +1,6 @@
+package packq4;
+
+public class ByTwos implements Series {
+	
+
+}

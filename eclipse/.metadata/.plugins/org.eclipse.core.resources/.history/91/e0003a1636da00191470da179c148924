@@ -1,0 +1,7 @@
+package packq4;
+
+public interface Series {
+	int GetNext(int num);
+	void Reset();
+	void setStart();
+}

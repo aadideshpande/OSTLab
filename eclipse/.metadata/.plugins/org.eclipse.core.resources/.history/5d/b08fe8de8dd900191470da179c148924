@@ -1,0 +1,14 @@
+package packq3;
+
+public class Student {
+	String name;
+	int year;
+	
+	void check() {
+		try {
+			int rem = year % 100;
+			
+		}
+	}
+	
+}

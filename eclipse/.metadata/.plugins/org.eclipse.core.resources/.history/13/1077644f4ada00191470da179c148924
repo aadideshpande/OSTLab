@@ -1,0 +1,5 @@
+package pack1;
+
+public class ExtendThread extends Thread {
+	super("a new demo thread");
+}

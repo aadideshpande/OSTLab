@@ -1,0 +1,13 @@
+
+public class four {
+	public static void main(String[] args) {
+		static void demo() {
+			try {
+				throw new NullPtrExc("demo");
+			}
+			catch(NullPtrExc e){
+				System.out.println("we are inside the catch ");
+			}
+		}
+	}
+}

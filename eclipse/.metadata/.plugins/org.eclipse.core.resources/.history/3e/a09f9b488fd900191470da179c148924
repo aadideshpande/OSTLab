@@ -1,0 +1,18 @@
+package packq3;
+import java.util.Scanner;
+public class q3 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter the no. of inputs");
+		int no = sc.nextInt();
+		Student s[] = new Student[no];
+		
+		for(int i = 1; i <= no; i++)
+		{	
+			s[i].name = "aadi";
+			s[i].year = sc.nextInt();
+			s[i].check(i);
+		}
+	}
+}

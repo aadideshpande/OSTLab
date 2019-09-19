@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/home/aadi/Documents/java/eclipse/.metadata/.plugins/org.eclipse.jdt.core
+2530287305.index
+1062412817.index
+3524926074.index
+1796098763.index

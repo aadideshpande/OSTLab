@@ -1,0 +1,45 @@
+
+public class six {
+	static void f1(){
+		try {
+			System.out.println("inside fone"); //1st executed 
+			throw new RuntimeException("demo");
+		}
+		finally {
+			System.out.println("fone is over"); //2nd executed , then the catch is executed at last
+		}
+	}
+	
+	static void f2() {
+		try {
+			System.out.println("inside ftwo "); //1st
+			return;
+		}
+		finally {
+			System.out.println("ftwo is over "); //2nd
+		}
+	}
+	
+	static void f3() {
+		try {
+			System.out.println("inside fthree");	//1st
+		}
+		finally {
+			System.out.println("fthree is over...."); //2nd
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		try {
+			f1();
+		}
+		catch(Exception e) {
+			System.out.println("exception has been caught");
+		}
+	
+	f2();
+	f3();
+
+	}
+}

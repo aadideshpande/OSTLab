@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+class BasicPhone implements Phone.Callable{
+	String num1 ;
+	public BasicPhone() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter your phone number");
+		num1 = sc.nextLine();
+	}
+	
+	void makeAudioCall()
+}

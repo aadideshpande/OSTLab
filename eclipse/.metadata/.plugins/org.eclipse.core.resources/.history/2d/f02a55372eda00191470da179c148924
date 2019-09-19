@@ -1,0 +1,10 @@
+package packq4;
+
+public class ByTwos implements Series {
+	public int GetNext(int num) {
+		return num+2;
+	}
+	
+	public 
+
+}

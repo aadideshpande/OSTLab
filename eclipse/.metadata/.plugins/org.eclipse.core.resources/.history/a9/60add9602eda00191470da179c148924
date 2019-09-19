@@ -1,0 +1,19 @@
+package packq4;
+import java.util.Scanner;
+
+public class ByTwos implements Series {
+	int inum;
+	
+	public int GetNext(int num) {
+		return num+2;
+	}
+	
+	public void setStart(int val) {
+		
+	}
+	public void Reset() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a number");
+	}
+
+}

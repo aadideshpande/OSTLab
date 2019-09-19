@@ -1,0 +1,11 @@
+package pack1;
+
+public class ExtendThread extends Thread {
+	public ExtendThread() {
+		super("a new demo thread");
+		System.out.println("child thread " + this);
+		start();
+	}
+
+	
+}

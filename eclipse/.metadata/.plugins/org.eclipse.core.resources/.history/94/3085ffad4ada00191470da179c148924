@@ -1,0 +1,7 @@
+package pack1;
+
+public class MainExtendThread {
+	public static void main(String[] args) {
+		new ExtendThread();
+	}
+}

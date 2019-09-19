@@ -1,0 +1,5 @@
+class BasicPhone implements Phone.Callable{
+	public BasicPhone() {
+		
+	}
+}

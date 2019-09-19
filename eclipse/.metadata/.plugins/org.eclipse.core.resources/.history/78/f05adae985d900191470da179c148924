@@ -1,0 +1,5 @@
+class SmartPhone implements Phone.Callable{
+	public SmartPhone() {
+		
+	}
+}

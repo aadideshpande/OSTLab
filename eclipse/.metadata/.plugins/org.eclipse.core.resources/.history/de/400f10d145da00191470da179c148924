@@ -1,0 +1,6 @@
+//create a new thread and get it running
+package pack1;
+
+public class NewThread {
+	
+}

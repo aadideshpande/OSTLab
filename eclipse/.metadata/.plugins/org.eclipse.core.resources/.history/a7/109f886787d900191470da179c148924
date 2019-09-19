@@ -1,0 +1,12 @@
+package packq2;
+import java.util.Scanner;
+
+public class CurrentDate {
+	public int day;
+	public int month;
+	public int year;
+	
+	void createDate() {
+		Scanner sc = new Scanner(System.in);
+	}
+}

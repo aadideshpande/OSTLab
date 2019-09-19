@@ -1,0 +1,19 @@
+package packq3;
+
+public class Student {
+	String name;
+	int year;
+	
+	void check(int i) {
+		try {
+			int rem = year % 100;
+			int regno = rem * 100 + i;
+			int limit = regno * 100 + 25;
+			if(regno > limit)
+			{
+				throw new SeatsFilledException();
+			}
+		}
+	}
+	
+}

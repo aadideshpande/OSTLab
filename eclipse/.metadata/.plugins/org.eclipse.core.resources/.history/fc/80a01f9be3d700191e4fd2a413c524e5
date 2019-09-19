@@ -1,0 +1,32 @@
+
+public class three {
+	public static void main(String args[]) {
+		try {
+			int a = 0;
+			int b = 42 / a; // catch ARITHMETIC EXCEPTION error
+			try {
+				if(a == 1) {
+					a = a/ (a - a);	// catch ARITHMETIC EXCEPTION error
+					System.out.println("inside another nested try "); // this statement is not executed
+				}
+				if(a == 2) {
+					int c[] = {1};
+					c[42] = 99;	//catch OUTOFBOUNDS error
+					
+				}
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println("array is out of bounds ");
+			}
+		}
+		
+		catch(ArithmeticException e) {
+			System.out.println("cannot divide by zero ");
+		}
+		
+		finally {
+			System.out.println("now in the finally block");
+		}
+		
+	}
+}

@@ -1,0 +1,16 @@
+package packq4;
+
+public class ByTwos implements Series {
+	int inum;
+	public int GetNext(int num) {
+		return num+2;
+	}
+	
+	public void setStart(int val) {
+		
+	}
+	public void Reset() {
+		
+	}
+
+}

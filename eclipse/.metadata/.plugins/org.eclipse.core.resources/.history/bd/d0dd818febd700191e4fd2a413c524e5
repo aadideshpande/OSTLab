@@ -1,0 +1,22 @@
+
+public class six {
+	static void fone(){
+		try {
+			System.out.println("inside fone");
+			throw new RuntimeException("demo");
+		}
+		finally {
+			System.out.println("fone is over");
+		}
+	}
+	
+	static void ftwo() {
+		try {
+			System.out.println("inside ftwo ");
+			return;
+		}
+		finally {
+			System.out.println("ftwo is over ");
+		}
+	}
+}

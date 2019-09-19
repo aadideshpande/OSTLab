@@ -1,0 +1,17 @@
+//the THROWS keyword
+public class five {
+	static void throwone() throws IllegalAccessException{
+		System.out.println("inside the function ");
+		throw new IllegalAccessException();
+	}
+	
+	public static void main(String[] args) {
+		try {
+			throwone();
+		}
+		catch(IllegalAccessException e) {
+			System.out.println("caught : " + e);
+		}
+		
+	}
+}

@@ -1,0 +1,21 @@
+
+public class two {
+	public static void main(String[] args) {
+		
+	
+		try {
+			int a = 0;
+			int b = 42 / a;
+			
+		}
+		
+		// the subclass ArithmeticException has to be placed before the superclass Exception
+		//else, an 'unreachable' error will be generated
+		catch(ArithmeticException e){
+			System.out.println("the catch from the sub class");
+		}
+		catch(Exception e){
+			System.out.println("the catch from the superclass");
+		}
+	}
+}

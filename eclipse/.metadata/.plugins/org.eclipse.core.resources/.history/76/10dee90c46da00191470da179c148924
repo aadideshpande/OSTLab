@@ -1,0 +1,12 @@
+//create a new thread and get it running
+package pack1;
+
+public class NewThread implements Runnable {
+	Thread t;
+	
+	NewThread(){
+		t = new Thread(this, "Demo Thread");
+		System.out.println("child thread " + t);
+		t.start();
+	}
+}
