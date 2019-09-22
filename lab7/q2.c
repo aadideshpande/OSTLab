@@ -1,125 +1,82 @@
+/*Implement a queue of strings using an output restricted dequeue (no deleteRight).
+Note: An output-restricted deque is one where insertion can be made at both ends,
+but deletion can be made from one end only, where as An input-restricted deque is
+one where deletion can be made from both ends, but insertion can be made at one
+end only.*/
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #define MAX 100
-
-int len;
 typedef struct 
 {
-	char queue[MAX];
-	int front1;
-	int rear1;
-	int front2;
-	int rear2;
+	char str[MAX][10];
+	int front;
+	int rear;
 }QUEUE;
 
-void enqueue1(QUEUE *ptr,char item)
+void insertrear(QUEUE *ptr, char item[])
 {
-	if(ptr->rear1 == ptr->rear2)
+	if(ptr->rear == MAX - 1)
 	{
-		printf("queue overflow \n");
+		printf("queue is full\n");
 	}
 	else
 	{
-		ptr->queue[++(ptr->rear1)] = item;
+		(ptr->rear)++;
+		strcpy(ptr->str[ptr->rear],item);
 	}
 }
 
-char dequeue1(QUEUE *ptr)
+void insertfront(QUEUE *ptr, char item[])
 {
-	if(ptr->front1 == ptr->rear1 && ptr->rear1 != 0) 
+	if(ptr->front == 0)
 	{
-		printf("queue underflow\n");
-		return 99;
+		printf("more cannot be added from this end\n");
 	}
 	else
 	{
-		return ptr->queue[(ptr->front1)++];
+		(ptr->front)--;
+		strcpy(ptr->str[ptr->front], item);
 	}
 }
 
-void enqueue2(QUEUE *ptr,char item)
+char* deletefront(QUEUE *ptr, char arr[])
 {
-	if(ptr->rear2 == ptr->rear1 && ptr->rear2 != len - 1)
+	if(ptr->front == -1)
 	{
-		printf("queue overflow \n");
+		printf("cannot be deleted, queue is empty \n");
 	}
 	else
 	{
-		ptr->queue[--(ptr->rear2)] = item;
+		strcpy(arr,ptr->str[(ptr->front)++]);
+		return arr;
+
 	}
 }
 
-char dequeue2(QUEUE *ptr)
+void display(QUEUE *ptr)
 {
-	if(ptr->front1 == ptr->rear1)
+	for(int i = ptr->front; i != ptr->rear + 1; i++)
 	{
-		printf("queue underflow\n");
-		return 99;
-	}
-	else
-	{
-		return ptr->queue[(ptr->front2)--];
+		printf(" %s ", ptr->str[i]);
 	}
 }
-
-
 
 int main()
 {
-	char str[100];
 	QUEUE q, *ptr;
 	ptr = &q;
-
-	printf("enter a string \n");
-	gets(str);
-	len = strlen(str);
-	ptr->front1 = 0;
-	ptr->rear1 = -1;
-	ptr->front2 = len ;
-	ptr->rear2 = len;
-
-	if(len % 2 == 0)
-	{
-		for(int i = 0; i < len/2; i++)
-		{
-			//printf("%c \n", str[i]);
-			enqueue1(ptr,str[i]);
-		}
-		for(int i = len - 1; i >= len/2; i--)
-		{
-			//printf("%c \n", str[i]);
-			enqueue2(ptr, str[i]);
-		}
-	}
-
-	
-	else if(len % 2 == 1)
-	{
-		for(int i = 0; i  < len/2; i++)
-		{
-			enqueue1(ptr, str[i]);
-		}
-		enqueue1(ptr, str[len/2]);
-		for(int i = len - 1; i > len / 2; i--)
-		{
-			enqueue2(ptr,str[i]);
-		}
-
-	}
-	int flag = 0;
-	for(int i = 0; i < len/2; i++)
-	{	
-		if(dequeue1(ptr) != dequeue2(ptr))
-		{
-			flag = 0;//printf("not a palindrome \n");
-			break;
-		}
-		else{flag = 1;}
-	}
-
-	if(flag == 0){printf("not a palindrome\n");}
-	else if(flag == 1){printf("is a palindrome\n");}
-
-	
-
+	ptr->front = 3;
+	ptr->rear = 3;
+	insertrear(ptr, "hi");
+	insertrear(ptr, "bro");
+	insertrear(ptr, "sssup");
+	insertfront(ptr, "aadi");
+	insertfront(ptr, "one");
+	display(ptr);
+	char arr[10];
+	printf("deleted string is %s \n", deletefront(ptr,arr));
+	display(ptr);
+	//printf("\n front pointer is at %d \n", ptr->front);
+	//printf("rear pointer is at %d \n", ptr->rear);
 }
