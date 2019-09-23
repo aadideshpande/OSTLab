@@ -60,19 +60,20 @@ void display(QUEUE *ptr)
 	{
 		printf(" %s ", ptr->str[i]);
 	}
+	printf("\n");
 }
 
 int main()
 {
 	QUEUE q, *ptr;
 	ptr = &q;
-	ptr->front = 3;
-	ptr->rear = 3;
-	insertrear(ptr, "hi");
-	insertrear(ptr, "bro");
-	insertrear(ptr, "sssup");
-	insertfront(ptr, "aadi");
-	insertfront(ptr, "one");
+	ptr->front = 50;
+	ptr->rear = 50;
+	insertrear(ptr, "Computer");
+	insertrear(ptr, "Science");
+	insertrear(ptr, "rules");
+	insertfront(ptr, "Data");
+	insertfront(ptr, "Structures");
 	display(ptr);
 	char arr[10];
 	printf("deleted string is %s \n", deletefront(ptr,arr));

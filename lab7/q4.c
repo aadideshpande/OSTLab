@@ -13,6 +13,12 @@ void enqueue(QUEUE *ptr, int item)
 	{
 		printf("overflow \n");
 	}
+	else if(isempty(ptr))
+	{
+		ptr->front = 0;
+		ptr->rear = 0;
+		ptr->queue[(ptr->rear)] = item;
+	}
 	else
 	{
 		ptr->queue[++(ptr->rear)] = item;
@@ -21,9 +27,16 @@ void enqueue(QUEUE *ptr, int item)
 
 int dequeue(QUEUE *ptr)
 {
-	if(isempty())
+	if(isempty(ptr))
 	{
 		printf("underflow \n");
+	}
+	else if(ptr->front == ptr->rear)
+	{
+		int k = ptr->queue[ptr->rear];
+		ptr->front = -1;
+		ptr->rear = -1;
+		return k;
 	}
 	else
 	{
@@ -33,31 +46,38 @@ int dequeue(QUEUE *ptr)
 
 void display(QUEUE *ptr)
 {
-	if(ptr->front < ptr->rear)
+	for(int i = ptr->front; i != ptr->rear + 1; i++)
 	{
-		for(int i = ptr->front + 1; i != ptr->rear + 1; i++)
-		{
-			printf("%d ", ptr->queue[i]);
-		}
+		printf("%d ", ptr->queue[i]);
 	}
-	else if(ptr->front > ptr->rear)
-	{
-		for(int i = ptr->front ; i != ptr->rear ; i--)
-		{
-			printf("%d ", ptr->queue[i]);
-		}
-	}
+	printf("\n");
 }
 
 int isempty(QUEUE *ptr)
 {
-	if(ptr->front == ptr->rear)
+	if(ptr->front == -1 && ptr->rear == -1)
 	{
 		return 1;
 	}
 	else
 	{
 		return 0;
+	}
+}
+
+void reverse(QUEUE *ptr)
+{
+	if(isempty(ptr))
+	{
+		return;
+	}
+	else
+	{
+		int x = dequeue(ptr);
+		//return reverse(ptr);
+		reverse(ptr);
+		enqueue(ptr,x);
+
 	}
 }
 
@@ -69,7 +89,16 @@ int main()
 	ptr->rear = -1;
 	int n,num;
 
-	printf("1. insert 2. delete, 3. display 4. exit \n");
+	/*enqueue(ptr, 5);
+	enqueue(ptr, 10);
+	enqueue(ptr, 15);
+	enqueue(ptr, 20);
+	enqueue(ptr, 25);
+	display(ptr);
+	reverse(ptr);
+	display(ptr);
+	*/
+	printf("1. insert 2. delete, 3. display 4. exit 5.  \n");
 	scanf("%d", &n);
 
 	while(n != 4)
@@ -91,15 +120,14 @@ int main()
 		{
 			display(ptr);
 		}
+		else if(n == 5)
+		{
+			reverse(ptr);
+		}
 		printf("enter another option \n");
 		scanf("%d", &n);
 
 	}
-
-	int temp = ptr->front;
-	ptr->front = ptr->rear;
-	ptr->rear = temp;
-
-	display(ptr);
 	
+
 }
