@@ -125,14 +125,20 @@ Nodeptr create()
 Nodeptr Union(Nodeptr one, Nodeptr two)
 {
 	Nodeptr first, last;
-	first = getnode();
+	first = NULL;
 	last = first;
+
+	Nodeptr temp1 = one;
+	while(temp)
+	{
+		first = insertlast(first,temp->data);
+	}
 
 }
 //////////////////////////////////////////////////
 int search(Nodeptr first, int x)
 {
-	Nodeptr *temp;
+	Nodeptr temp;
 	temp = first;
 	while(temp)
 	{
@@ -159,8 +165,9 @@ int main()
 	first = insertlast(&first, 90);
 	display(first);
 
-	Nodeptr one = create();
-	display(one);
-	Nodeptr two = create();
-	display(two);
+	printf("search for element 550  %d \n", search(first, 550));
+	//Nodeptr one = create();
+	//display(one);
+	//Nodeptr two = create();
+	//display(two);
 }
