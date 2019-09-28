@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 14</title>
+</head>
+<body>
+		<nav>
+			<a href="practice1.html">Q7</a>
+			<a href="practice2.html">Q8</a>
+			<a href="practice3.html">Q9</a>
+			<a href="practice4.html">Q10</a>
+			<a href="practice5.html">Q11</a>
+			<a href="practice6.html">Q12</a>
+			<a href="practice7.html">Q13</a>
+			<a href="practice8.html">Q14</a>
+		</nav>
+
+		<h2>HTML Canvas</h2>
+
+		Create an empty canvas
+		<canvas id="my1" width="200" height="200"></canvas>	
+		<br>
+		<br>
+
+		Draw a line
+		<canvas id="my1" width="100" height="100"></canvas>	
+		<br>
+		<br>
+
+		Draw Circle
+		<canvas id="my2" width="200" height="100"></canvas>	
+		<br>
+		<br>
+
+		rectangle
+		<canvas id="my3" width="200" height="100"></canvas>	
+		<br>
+		<br>
+
+			<canvas id="myCanvas" width="200" height="100"></canvas>	
+		<br>
+		<br>
+
+			<canvas id="my4" width="200" height="100"></canvas>	
+		<br>
+		<br>
+
+
+
+		<script type="text/javascript">
+			var c = document.getElementById('my1');
+			var ctx = c.getContext("2d");
+			ctx.moveTo(0,0);
+			ctx.lineTo(100,100);
+			ctx.stroke();
+
+			var d = document.getElementById('my2');
+			var dtx = d.getContext("2d");
+			dtx.beginPath();
+			dtx.arc(95,50,40,0,2*Math.PI);
+			dtx.stroke();
+
+			var e = document.getElementById("my3");
+			var etx = e.getContext("2d");
+			etx.fillRect(20, 20, 150, 100);
+			etx.fillStyle = 'yellow';
+
+
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+
+// Create gradient
+			var grd = ctx.createLinearGradient(0, 0, 200, 0);
+			grd.addColorStop(1, "yellow");
+			grd.addColorStop(0, "orange");
+
+			// Fill with gradient
+			ctx.fillStyle = grd;
+			ctx.fillRect(10, 10, 150, 80); 
+
+
+			var c = document.getElementById("my4");
+			var ctx = c.getContext("2d");
+
+			// Create gradient
+			var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+			grd.addColorStop(0, "blue");
+			grd.addColorStop(1, "cyan");
+
+			// Fill with gradient
+			ctx.fillStyle = grd;
+			ctx.fillRect(50, 10, 150, 80); 
+
+		</script>
+
+</body>
+</html>
