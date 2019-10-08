@@ -37,6 +37,7 @@ Nodeptr createbintree(char item)
 	}
 }
 
+//LRV
 void postorder(Nodeptr root)
 {
 	if(root)

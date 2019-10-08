@@ -52,14 +52,57 @@ Nodeptr copy(Nodeptr root)
 	return temp;
 }
 
+//LVR
+void preorder(Nodeptr root)
+{
+	if(root)
+	{
+		preorder(root->lchild);
+		printf("%c ", root->data);
+		preorder(root->rchild);
+	}
+}
+
+void equality(Nodeptr root1, Nodeptr root2)
+{
+	if(root1->data != root2->data)
+	{
+		printf("the trees are not equal\n");
+	}
+	else
+	{
+		equality(root1->lchild,root2->lchild);
+		equality(root1->rchild,root2->lchild);
+	}
+}
+
 int main()
 {
 	Nodeptr root = NULL;
+	Nodeptr newroot = NULL;
 	char item;
 	printf("creating a tree\n");
 	printf("enter root \n");
 	scanf(" %c",&item);
 	root = createbintree(item);
+	Nodeptr ptr1 = root;
+	preorder(ptr1);
+	newroot = copy(root);
+	printf("\n");
+	preorder(newroot);
+	printf("\n");
+
+	Nodeptr nnroot = NULL;
+	printf("creating a tree\n");
+	printf("enter root \n");
+	scanf(" %c",&item);
+	nnroot = createbintree(item);
+	Nodeptr ptr2 = nnroot;
+	preorder(ptr2);
+	printf("\n");
+
+	equality(root, nnroot);
+
 
 	return 0;
 }

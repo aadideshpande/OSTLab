@@ -11,7 +11,7 @@ typedef struct
 
 void push(STACK *st, Nodeptr cur)
 {
-	printf("inside push \n");
+	
 	st->stack[++(st->top)] = cur;
 }
 
@@ -76,13 +76,13 @@ void iterative_inorder(Nodeptr root)
 	{
 		while(cur!= NULL)
 		{
-			printf("here1\n");
+			//printf("here1\n");
 			push(s,cur);
 			cur = cur->lchild;
 		}
-		if(isemptystack(s))
+		if(!isemptystack(s))
 		{
-			printf("here2\n");
+			//printf("here2\n");
 			cur = pop(s);
 			printf("%d \n",cur->data);
 			cur = cur->rchild;
@@ -96,6 +96,7 @@ void iterative_inorder(Nodeptr root)
 
 void iterative_preorder(Nodeptr root)
 {
+	printf("printing using preorder\n");
 	Nodeptr cur;
 	int done = 0;
 	STACK *s, s1;
@@ -110,30 +111,86 @@ void iterative_preorder(Nodeptr root)
 
 	while(!done)
 	{
+		//printf("before push function\n");
 		push(s, cur);
+		//printf("after push function \n");
+		//cur = cur->lchild;
+		//printf("updating lchild\n");
+	
+
+		while(!isemptystack(s))
+		{
+			//printf("before pop function\n");
+			cur = pop(s);
+			printf("%d \n", cur->data);
+			//cur = cur->rchild;
+
+			if(cur->rchild)
+			{
+				push(s,cur->rchild);
+			}
+			if(cur->lchild)
+			{
+				push(s,cur->lchild);
+			}
+			else{done = 1;}
+		}
+	}
+}
+
+void iterative_postorder(Nodeptr root)
+{
+	struct stack
+	{
+		Nodeptr node;
+		int flag;
+	};
+
+	Nodeptr cur;
+	struct stack s[20];
+	int top = -1;
+
+	if(root == NULL)
+	{
+		printf("tree is empty\n");
+		return;
+	}
+
+	cur = root;
+
+	
+	while(cur != NULL)
+	{
+		s[(++top)].node = cur;
+		s[top].flag = 1;
 		cur = cur->lchild;
 	}
 
-	while(!isemptystack(s))
-	{
-		cur = pop(s);
-		printf("%d \n", cur->data);
-		cur = cur->rchild;
 
-		if(cur->rchild)
+	for(; ;)
+	{
+		
+		cur = s[top].node;
+		cur = cur->rchild;
+		s[top].flag = -1;
+
+		while(s[top].flag < 0)
 		{
-			push(s,cur->rchild);
+			cur = s[top--].node;
+			cur = cur->rchild;
+			printf("%d ", cur->data);
+			if(top == -1)
+			{
+				return;
+			}
 		}
-		if(cur->lchild)
-		{
-			push(s,cur->lchild);
-		}
-		else{done = 1;}
+
+
+
 	}
 
-
-
 }
+
 
 int main()
 {
@@ -145,6 +202,7 @@ int main()
 	root = createbintree(item);
 	iterative_inorder(root);
 	iterative_preorder(root);
+	iterative_postorder(root);
 	return 0;
 }
 
