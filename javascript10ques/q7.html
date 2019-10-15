@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<p>
+		enter marks of sub1	<input type="text" id="a" value="no value">
+	</p>
+	<p>
+		enter marks of sub2	<input type="text" id="b" value="no value">
+	</p>
+	<p>
+		enter marks of sub3	<input type="text" id="c" value="no value">
+	</p>
+	<p>
+		enter marks of sub4	<input type="text" id="d" value="no value">
+	</p>
+	
+
+	<button onclick="average()">Average</button>
+	<button onclick="grade()">Grade</button>
+
+	<script type="text/javascript">
+		
+		var avg;
+		var sum = 0;
+		var grd;
+
+		var p = parseInt(document.getElementById("a").value);
+		var q = parseInt(document.getElementById("b").value);
+		var r = parseInt(document.getElementById("c").value);
+		var s = parseInt(document.getElementById("d").value);
+		//var p = parseInt(prompt("enter marks for sub1"));
+		//var q = parseInt(prompt("enter marks for sub2"));
+		//var r = parseInt(prompt("enter marks for sub3"));
+		//var s = parseInt(prompt("enter marks for sub4"));
+		
+		function average()
+		{
+			sum = p + q + r + s;
+			avg = sum / 4;
+			alert("average is " + avg);
+		}
+
+		function grade()
+		{
+			if(avg > 90){alert("Grade A"  );}
+			else if(avg > 80 && avg < 90){alert("Grade b"  );}
+			else if(avg > 70 && avg < 80){alert("Grade c"  );}
+			else if(avg < 70){alert("Grade d"  );}
+		}
+
+	</script>
+
+
+
+
+</body>
+</html>

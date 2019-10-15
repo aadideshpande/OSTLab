@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="a" value="no value">
+
+	<button onclick="myFunction()">Try it</button>
+
+
+
+	<script type="text/javascript">
+		function myFunction(){
+			document.getElementById("a").value = "no value";
+
+			var block = prompt("enter anything");
+			if(typeof(block) == "string"){
+				document.getElementById("a").value = "string";
+			}
+			if(typeof(parseInt(block)) == "number"){
+				document.getElementById("a").value = "number";
+			}else if(typeof(parseBool(block)) == "boolean"){
+				
+				document.getElementById("a").value = "boolean";
+			}
+
+		}
+
+
+	</script>
+
+</body>
+</html>

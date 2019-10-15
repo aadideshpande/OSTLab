@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Q1 Display the image </title>
+</head>
+<body>
+
+	<canvas id="myCanvas" width="200" height="300" style="">
+
+	
+
+
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "black";
+		ctx.fillRect(20, 20, 125, 200);
+
+		var d = document.getElementById("myCanvas");
+		var dtx = d.getContext("2d");
+		dtx.fillStyle = "gray";
+		ctx.rotate(40 * Math.PI / 180);
+		dtx.fillRect(100, -20, 125, 200);
+
+	</script>
+</body>
+</html>
