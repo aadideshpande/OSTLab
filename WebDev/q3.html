@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maximum of 3 numbers</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var a = parseInt(prompt("enter num 1"));
+		var b = parseInt(prompt("enter num 2"));
+		var c = parseInt(prompt("enter num 3"));
+
+		var max;
+
+		if(a > b)
+		{
+			if(a > c){max = a;}
+			else{max = c;}
+		}
+		else if(b > a)
+		{
+			if(b > c){max = b;}
+			else{max = c;}
+		}
+
+		alert("the maximum is " + max);
+
+		var min;
+		if(a > b && c > b){min = b;}
+		if(b > a && c > a){min = a;}
+		if(a > c && b > c){min = c;}
+
+		alert("the minimum is " + min);
+		
+
+
+	</script>
+
+</body>
+</html>

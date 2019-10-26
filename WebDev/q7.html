@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade</title>
+</head>
+<body>
+
+	<div >
+		marks of sub1
+		<input type="text" id="a">
+	</div>
+	<div >
+		marks of sub2
+		<input type="text" id="b">
+	</div>
+	<div >
+		marks of sub3
+		<input type="text" id="c">
+	</div>
+	<div >
+		marks of sub4
+		<input type="text" id="d">
+	</div>
+
+	<button id="grade" onclick="Grade()">Grade</button>
+	<button id="avg" onclick="Avg()">Average</button>
+
+	<script type="text/javascript">
+		
+		var avg = 0.0;
+		function Avg(){
+			var a = parseInt(document.getElementById('a').value);
+			var b = parseInt(document.getElementById('b').value);
+			var c = parseInt(document.getElementById('c').value);
+			var d = parseInt(document.getElementById('d').value);
+			var sum = a + b  + c + d;
+			avg = sum / 4;
+			alert("avg is " + avg);
+		}
+
+		function Grade(){
+			if(avg >= 90){alert("A grade");}
+			if(avg < 90 && avg >80){alert("B grade");}
+			if(avg <= 80 && avg >70 ){alert("C grade");}
+			if(avg <= 70){alert("D grade");}
+		}
+
+	</script>
+
+</body>
+</html>

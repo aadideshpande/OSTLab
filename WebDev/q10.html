@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="q1">
+		Which of the foll. is not related to javascript?
+		<br>
+		<br>
+		Angular JS
+		<input type="radio" id="angularjs" name="angular js">
+		React
+		<input type="radio" id="react" name="react">
+		Django
+		<input type="radio" id="django" onclick="ans1()" name="django">
+		<br>
+		<br>
+
+	</div>
+	<br>
+	<br>
+
+	<div id="q2">
+		Angular JS has been developed by which company?
+		<br>
+		<br>
+		Google
+		<input type="radio" id="angularjs" onclick="ans2()" name="angular js">
+		Amazon
+		<input type="radio" id="react" name="react">
+		Apple
+		<input type="radio" id="django" name="django">
+		<br>
+		<br>
+	</div>
+	<br>
+	<br>
+
+	<div id="q2">
+		React has been maintained by which company?
+		<br>
+		<br>
+		Semantec
+		<input type="radio" id="angularjs" name="angular js">
+		Facebook
+		<input type="radio" id="react" onclick="ans3()" name="react">
+		Oracle
+		<input type="radio" id="django" name="django">
+		<br>
+		<br>
+	</div>
+	<br>
+	<button id="submit" onclick="output()" >SUBMIT</button>
+
+
+	<script type="text/javascript">
+		var score = 0;
+		function wrongans(){score -= 25;}
+		function ans1(){
+			if(score < 0){score = 0;}
+			score += 25;}
+		function ans2(){
+			if(score < 0){score = 0;}
+			score += 25;}
+		function ans3(){
+			if(score < 0){score = 0;}
+			score += 25;}
+
+		function output(){
+			alert("score is " + score);
+		}
+	</script>
+</body>
+</html>

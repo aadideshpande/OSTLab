@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<div id="sum"></div>
+
+	<button onclick="Insert()">Insert</button>
+	<button onclick="Delete()">Delete</button>
+	<button onclick="Display()">Display</button>
+	<br>
+	<div id="disp"></div>
+
+<script>
+		
+			var sum = 0;
+			//var num = prompt("enter no. of elements ");
+			var arr = Array();
+			var n;
+			var i = 0;
+			function Insert()
+			{
+				var x = prompt("enter number");
+				arr[i++] = x;
+			}
+			function Delete()
+			{
+				var ele = prompt("enter element to be deleted");
+				for(var j = 0; j < arr.length; j = j+1)
+				{
+					if(ele == arr[j])
+					{
+						arr[j] = " ";
+						alert("found at location " + (j+1));
+						break;
+					}
+				}
+			}
+			function Display()
+			{
+				var s = " ";
+				for(var j = 0; j < arr.length; j = j+1)
+				{
+					s += " " + arr[j];
+				}
+				alert(s);
+			}
+			
+		
+	</script>
+	
+</body>
+
+
+</html>

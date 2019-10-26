@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Background</title>
+</head>
+<body>
+	<canvas id="mycanvas" width="200" height="200"></canvas>
+	<br>
+	<input type="radio" 
+	id="red" onclick="red();">Red</button>
+	<input type="radio" id="blue" onclick=blue();>Blue</button>
+	<input type="radio" id="green" onclick="green();">Green</button>
+
+	<script type="text/javascript">
+		function red(){
+			var r = document.getElementById("mycanvas");
+			var rtx = r.getContext("2d");
+			rtx.fillStyle = "red";
+			rtx.fillRect(0,0,200,200);
+		}
+
+		function green(){
+			var r = document.getElementById("mycanvas");
+			var rtx = r.getContext("2d");
+			rtx.fillStyle = "green";
+			rtx.fillRect(0,0,200,200);
+		}
+
+		function blue(){
+			var r = document.getElementById("mycanvas");
+			var rtx = r.getContext("2d");
+			rtx.fillStyle = "blue";
+			rtx.fillRect(0,0,200,200);
+		}
+
+	</script>
+
+</body>
+</html>

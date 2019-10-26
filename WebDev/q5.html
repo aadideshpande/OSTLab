@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smiley Face</title>
+</head>
+<body>
+	<canvas id="face" width="400" height="400"></canvas>
+
+<script>
+	//main yellow circle
+	var c = document.getElementById("face");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = "yellow";
+	ctx.fill();
+
+	//eye1;
+	var e1 = document.getElementById('face');
+	var e1tx = e1.getContext("2d");
+	e1tx.beginPath();
+	e1tx.arc(75,60,10,0,2 * Math.PI);
+	e1tx.stroke();
+	e1tx.fillStyle = "black";
+	e1tx.fill();
+
+	//eye2;
+	var e2 = document.getElementById('face');
+	var e2tx = e2.getContext("2d");
+	e2tx.beginPath();
+	e2tx.arc(125,60,10,0,2 * Math.PI);
+	e2tx.stroke();
+	e2tx.fillStyle = "black";
+	e2tx.fill();
+
+	//smile
+	var s = document.getElementById('face');
+	var stx = s.getContext("2d");
+	stx.beginPath();
+	stx.arc(100,75,40,0, Math.PI);
+	stx.stroke();
+</script> 
+
+
+</body>
+</html>

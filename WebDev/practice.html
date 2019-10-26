@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Sum and product of an array of integers</title>
+</head>
+<body>
+<script type="text/javascript">
+var array = [];
+var size = 5;
+for(var i=0; i<size; i++) {
+
+array[i] = Number(prompt('Enter Element ' + (i+1)));
+
+}
+var s = 0,
+p = 1,
+i;
+for (i = 0; i < array.length; i += 1)
+{
+s += array[i];
+p *= array[i];
+}
+alert('Sum : '+ s + ' Product : ' +p);
+</script>
+</body>
+</html>

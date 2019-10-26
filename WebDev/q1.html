@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+	<canvas id="mycanvas" width="400" height="400"></canvas>
+
+	<script type="text/javascript">
+		var c = document.getElementById("mycanvas");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "red";
+		ctx.fillRect(0,0,150,200); 
+		
+		//x = x-coor of upper left corner rectangle
+		//y = y-coor of upper -------||------------
+		//width of rect in pixels
+		//height of rect in pixels
+
+		var d = document.getElementById("mycanvas");
+		var dtx = d.getContext("2d");
+		dtx.fillStyle = "yellow";
+		dtx.rotate(25 * Math.PI / 180);
+		dtx.fillRect(50,-20,150,200);
+
+
+	</script>
+</body>
+</html>

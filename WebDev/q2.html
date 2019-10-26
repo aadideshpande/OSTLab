@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum and Product of array of integers</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var sum = 0;
+		var n = prompt("enter the number of elements ");
+		var arr = Array();
+		var product = 1;
+		var num;
+
+		for(var i = 1; i <= n; i++){
+			num = prompt("enter number " + i );
+			sum += parseInt(num);
+			product *=parseInt(num);
+		}
+		alert("sum is " + sum + " product is " + product);
+
+
+	</script>
+
+</body>
+</html>

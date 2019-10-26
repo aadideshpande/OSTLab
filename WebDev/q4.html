@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="myinput" name="">
+	<button id="mybutton" onclick="check()">CHECK</button>
+	<script type="text/javascript">
+		function check(){
+			var s = document.getElementById('myinput').value;
+			if(s >= 'a' && s <= 'z'){alert('string');}
+			if(s >= '0' && s <= '9'){alert('number');}
+			if(s == 'True' || s == 'False'){alert('boolean');}
+		}
+
+		
+	</script>
+</body>
+</html>
