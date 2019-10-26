@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body ng-app="app1">
+	
+	Enter First name
+	<div ng-controller="mycontroller" >
+		
+		<input type="text" id="mytext" ng-model="message1" name="">
+		{{ message1 }}
+
+	</div>
+
+	Enter Last name
+	<div ng-controller="mycontroller" >
+		
+		<input type="text" id="mytext" ng-model="message1" name="">
+		{{ message1 }}
+
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script>
+				//create a module
+		var app1 = angular.module('app1', []);	
+		//app1 is module name, [] are the dependencies
+
+		//create a controller
+		var mycontroller = function ($scope){
+			//$scope.message = "CSE Branch MIT manipal.";
+			$scope.message1 = document.getElementById("mytext").value;
+		};
+		//scope is the parameter object, message is the property
+
+
+		//registering the controller to the module
+		app1.controller("mycontroller", mycontroller);
+
+	</script>
+		
+
+
+</body>
+</html>
