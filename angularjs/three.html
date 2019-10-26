@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body ng-app="app1">
+	
+	Enter Price
+	<div ng-controller="mycontroller" >
+		
+		<input type="text" id="myprice" ng-model="price" name="">
+		<br>
+
+	Enter Quantity
+	<div ng-controller="mycontroller" >
+		
+		<input type="text" id="myquantity" ng-model="amount" name="">
+		<br>
+		{{ price * amount }}
+
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script>
+
+		var price = Number(document.getElementById("myprice").value)
+
+		var quantity = Number(document.getElementById("myquantity").value);
+
+		var app1 = angular.module('app1', []);	
+
+		var mycontroller = function ($scope){
+			$scope.amt = $scope.price * $scope.quantity;
+		};
+
+
+		app1.controller("mycontroller", mycontroller);
+
+	</script>
+		
+
+
+</body>
+</html>

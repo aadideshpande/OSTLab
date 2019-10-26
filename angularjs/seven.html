@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="jsCtrl">
+
+<h1>Customer:</h1>
+
+<pre>{{customer | json}}</pre>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('jsCtrl', function($scope) {
+    $scope.customer = {
+        "name" : "QWERTY",
+        "city" : "wdc",
+        
+    };
+});
+</script>
+
+<p>The json filter converts a JavaScript object into a JSON string.</p>
+
+</body>
+</html>

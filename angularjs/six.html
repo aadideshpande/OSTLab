@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <script src="angular.min.js"></script>
+  </head>
+<body ng-app="numberFilterExample">
+  <script>
+  angular.module('numberFilterExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.val = 22/7;
+    }]);
+</script>
+<div ng-controller="ExampleController">
+  two decimal: <span>{{val | number:2}}</span><br>
+  four decimal: <span>{{val | number:4}}</span><br>
+
+</div>
+</body>
+</html>
