@@ -51,6 +51,22 @@ void postorder(Nodeptr root)
 	}
 }
 
+//WA
+int evaluate(Nodeptr root)
+{
+	switch(root->data)
+	{
+		case '+':evaluate(root->lchild) + evaluate(root->rchild);
+				 break;
+		case '-':evaluate(root->lchild) - evaluate(root->rchild);
+				 break;
+		case '*':evaluate(root->lchild) * evaluate(root->rchild);
+				 break;
+		case '/':evaluate(root->lchild) / evaluate(root->rchild);
+				 break;
+		default: return ((root->data - '0'));
+	}
+}
 
 
 int main()
@@ -62,6 +78,7 @@ int main()
 	scanf(" %c",&item);
 	root = createbintree(item);
 	postorder(root);
+	printf("\n evaluation is %d \n", evaluate(root) );
 	return 0;
 }
 
